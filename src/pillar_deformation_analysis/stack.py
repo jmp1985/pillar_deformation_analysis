@@ -48,5 +48,7 @@ def make_before_and_after_stacks(data_dir: str, name: str) -> None:
         os.makedirs(name)
 
     # Make the before and after stacks
-    make_stack(data_dir, name, "before")
-    make_stack(data_dir, name, "after")
+    if not os.path.exists(os.path.join(name, "before.mrc")):
+        make_stack(data_dir, name, "before")
+    if not os.path.exists(os.path.join(name, "after.mrc")):
+        make_stack(data_dir, name, "after")
