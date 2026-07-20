@@ -1,0 +1,17 @@
+[project]
+name = "pillar-deformation-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.9",
+    "napari-mrcfile-reader>=0.2.0",
+    "napari[all]>=0.7.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.22",
+    "ty>=0.0.60",
+]
