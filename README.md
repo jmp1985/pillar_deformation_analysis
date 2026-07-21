@@ -8,6 +8,6 @@
 
 2. Then modify (or copy) "run_example_analysis.py" and put the files to analyse.
 
-3. Finally run the following command:
+3. Finally run the following command to analyse the files:
 
-`uv python run_example_analysis.py to analyse the files.
+`uv python run_example_analysis.py`
