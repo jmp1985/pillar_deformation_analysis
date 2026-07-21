@@ -5,7 +5,7 @@ from pillar_deformation_analysis.pick import pick_points_before_and_after
 from pillar_deformation_analysis.analysis import analyse_deformation
 
 
-def read_pillar_data(datasets: list[str]) -> None:
+def read_pillar_data(datasets: list[str]) -> list[tuple[str, float, float, float]]:
     """Read the pillar data."""
     pillar_data = []
     for name in datasets:
@@ -38,7 +38,7 @@ def plot_deformation(pillar_data: list) -> None:
     fig.savefig("deformation.png", dpi=600, bbox_inches="tight")
 
 
-def main(data_dir: str, datasets: list[str], pixel_size=1.93) -> None:
+def analyse(data_dir: str, datasets: list[str], pixel_size: float = 1.93) -> None:
     """Process the datasets."""
 
     # Loop through datasets
@@ -57,10 +57,3 @@ def main(data_dir: str, datasets: list[str], pixel_size=1.93) -> None:
 
     # Plot the deformation
     plot_deformation(pillar_data)
-
-
-if __name__ == "__main__":
-    data_dir = "/media/jmp/RFI/2025/Pillars/data"
-    datasets = ["./FuManchuPillars/TheCasrleOfPillar-2"]
-    pixel_size = 1.93
-    main(data_dir, datasets, pixel_size)
